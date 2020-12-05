@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React,  { useState } from 'react';
 
 function App() {
+
+  // const [count, changeCounter] = useState(() => {
+  //   return 0
+  // })
+  const [count, changeCounter] = useState(0)
+  const [name, changeName] = useState('bicycles')
+
+  function subtractFromCount() {
+    changeCounter(previousCount => previousCount - 1)
+  }
+
+  function addToCount() {
+    changeCounter(previousCount => previousCount + 1)
+    changeName('updateName')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={subtractFromCount}>-</button>
+      <span>{count} {name}</span>
+      <button onClick={addToCount}>+</button>
     </div>
   );
 }
 
 export default App;
+
