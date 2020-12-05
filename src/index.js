@@ -3,12 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import App2 from './App2';
+import AppInline from './App-w-functions-inline';
+import AppObjects from './App-w-objects';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <App2 />
+    <AppInline />
+    <AppObjects />
   </React.StrictMode>,
   document.getElementById('root')
 );
